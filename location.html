@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My location</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of mine
+  var myL = {lat: 40.013700, lng: -105.269685};
+  // The map, centered at myL
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: myL});
+  // The marker, positioned at myL
+  var marker = new google.maps.Marker({position: myL, map: map});
+}
+    // </script>
+    // <!--Load the API from the specified URL
+    // * The async attribute allows the browser to render the page while the API loads
+    // * The key parameter will contain your own API key (which is not needed for this tutorial)
+    // * The callback parameter executes the initMap() function
+    // -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAN8MVxCy7OlNxEDQ5UtLFdUS9ne36tNo&callback=initMap">
+    </script>
+  </body>
+</html>
